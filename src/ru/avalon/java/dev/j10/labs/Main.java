@@ -1,25 +1,31 @@
 package ru.avalon.java.dev.j10.labs;
 
 import ru.avalon.java.dev.j10.labs.models.*;
-import ru.avalon.java.dev.j10.labs.commons.Address;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        String ivanovName = "Иванов Иван Иванович";
-        String smithName = "John Edvard Smith";
+        String ivanovName2 = "Иванов Иван Иванович";
+        String smithName2 = "John Edward Smith";
 
-        String ivanovAddress = "Россия, Москва";
-        String smithAddress = "США, Вашингтон";
+        String ivanovAddress2 = "Россия, Москва";
+        String smithAddress2 = "США, Вашингтон";
 
-        Person ivanov = new Person(ivanovName, ivanovAddress);
-        Person smith = new Person(smithName, smithAddress);
+        System.out.println(ivanovName2);
+        System.out.println(ivanovAddress2);
+        System.out.println(smithName2);
+        System.out.println(smithAddress2);
 
-        System.out.println(ivanovName);
-        System.out.println(ivanovAddress);
-        System.out.println(smithName);
-        System.out.println(smithAddress);
+        Person ivanovName = new Person("Иван", "", "Иванович", "Иванов");
+        Person ivanovAddress = new Person("РФ", "Москва", "Красная площадь", 1);
+        Person smithName = new Person("John", "Edward", "", "Smith");
+        Person smithAddress = new Person("USA", "Washington", "NW Pennsylvania Ave", 1600);
+
+        System.out.println(ivanovName.getFullName());
+        System.out.println(ivanovAddress.getFullAddress());
+        System.out.println(smithName.getFullName());
+        System.out.println(smithAddress.getFullAddress());
 
         /*
          * TODO(Студент): Создайте экземпляры класса 'Person'

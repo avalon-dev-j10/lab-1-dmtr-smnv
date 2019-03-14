@@ -14,10 +14,23 @@ import ru.avalon.java.dev.j10.labs.commons.Address;
  */
 public class Person {
 
-    public Person() {
+    Passport objPassport;
+    Address objAddress;
+
+    public Person(
+            String name,
+            String middleName,
+            String patronymic,
+            String surname) {
+        objPassport = new Passport(name, middleName, patronymic, surname);
     }
 
-    public Person(String name, String address) {
+    public Person(
+            String country,
+            String city,
+            String street,
+            int building) {
+        objAddress = new Address(country, city, street, building);
     }
 
     /*
@@ -55,16 +68,25 @@ public class Person {
          * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
          */
 
-        Passport objPassport = new Passport();
-
         String objName = objPassport.getName();
-        String objSurname = objPassport.getSurname();
-        String objPatronymic = objPassport.getPatronymic();
         String objMiddleName = objPassport.getMiddleName();
+        String objPatronymic = objPassport.getPatronymic();
+        String objSurname = objPassport.getSurname();
 
-        String fullName = objName + " " + objMiddleName + " " + objPatronymic + " " + objSurname;
+        if (objMiddleName == null && objPatronymic == null) {
+            String fullName = objName + " " + objSurname;
+            return fullName;
+        } else if (objPatronymic == null) {
+            String fullName = objName + " " + objMiddleName + " " + objSurname;
+            return fullName;
+        } else if (objMiddleName == null) {
+            String fullName = objName + " " + objPatronymic + " " + objSurname;
+            return fullName;
+        } else {
+            String fullName = objName + " " + objMiddleName + " " + objPatronymic + " " + objSurname;
+            return fullName;
+        }
 
-        return fullName;
     }
 
     /**
@@ -75,9 +97,7 @@ public class Person {
      *
      * @return адрес регистрации в виде строки.
      */
-    public String getAddress() {
-
-        Address objAddress = new Address();
+    public String getFullAddress() {
 
         String objCountry = objAddress.getCountry();
         String objCity = objAddress.getCity();

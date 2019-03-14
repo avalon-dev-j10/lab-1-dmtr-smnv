@@ -10,8 +10,6 @@
  */
 package ru.avalon.java.dev.j10.labs.commons;
 
-import java.util.Scanner;
-
 public class Address {
 
     private String country;
@@ -19,10 +17,19 @@ public class Address {
     private String street;
     private int building;
 
+    public Address(
+            String country,
+            String city,
+            String street,
+            int building) {
+        this.country = country;
+        this.city = city;
+        this.street = street;
+        this.building = building;
+    }
+
     public void setCountry(String country) {
-        System.out.println("Enter the country");
-        Scanner scanCountry = new Scanner(System.in);
-        this.country = scanCountry.next();
+        this.country = country;
     }
 
     public String getCountry() {
@@ -30,9 +37,7 @@ public class Address {
     }
 
     public void setCity(String city) {
-        System.out.println("Enter the city");
-        Scanner scanCity = new Scanner(System.in);
-        this.city = scanCity.next();
+        this.city = city;
     }
 
     public String getCity() {
@@ -40,9 +45,7 @@ public class Address {
     }
 
     public void setStreet(String street) {
-        System.out.println("Enter the street");
-        Scanner scanStreet = new Scanner(System.in);
-        this.street = scanStreet.next();
+        this.street = street;
     }
 
     public String getStreet() {
@@ -50,9 +53,7 @@ public class Address {
     }
 
     public void setBuilding(int building) {
-        System.out.println("Enter the building");
-        Scanner scanBuilding = new Scanner(System.in);
-        this.building = scanBuilding.nextByte();
+        this.building = building;
     }
 
     public int getBuilding() {
