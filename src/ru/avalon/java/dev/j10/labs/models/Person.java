@@ -33,21 +33,7 @@ public class Person {
         objAddress = new Address(country, city, street, building);
     }
 
-    /*
-     * TODO(Студент): Создайте класс Address.
-     *
-     * 1. Добавте файл в пакет ru.avalon.java.dev.j10.labs.commons.
-     *
-     * 2. Создайте класс, видимый из пакета. Подумайте о том
-     *    Какое имя должен иметь класс, если он объявленн в этом
-     *    файле.
-     *
-     * 3. Подумайте над тем, какие переменные должены быть
-     *    определены в классе.
-     *
-     * 4. Подумайте над тем, какие методы должны быть объявлены
-     *    в классе.
-     */ /**
+    /**
      * Возврвщает полное имя человека.
      * <p>
      * Если у человека есть Имя, Фамилия и Отчество, то возвращет Имя, Фимилию и
@@ -62,21 +48,28 @@ public class Person {
      *
      * @return имя человека в виде строки.
      */
-
     public String getFullName() {
-        /*
-         * TODO(Студент): Закончить определение метода 'getFullName()' класса 'Person'
-         */
 
         String objName = objPassport.getName();
         String objMiddleName = objPassport.getMiddleName();
         String objPatronymic = objPassport.getPatronymic();
         String objSurname = objPassport.getSurname();
 
+//      char initial = objMiddleName.charAt(0);
+//      String temp = Character.toString(initial) + ".";
+//      this.objMiddleName = String temp;
+//      String temp = objMiddleName.substring(0,1) + ".";
+//      this.middleName = temp;
         if (objMiddleName == null && objPatronymic == null) {
             String fullName = objName + " " + objSurname;
             return fullName;
         } else if (objPatronymic == null) {
+
+//          char initial = objMiddleName.charAt(0);
+//          String temp = Character.toString(initial) + ".";
+//          this.objMiddleName = String temp;
+//          String temp = obj.MiddleName.substring(0,1) + ".";
+//          this.objMiddleName = temp;
             String fullName = objName + " " + objMiddleName + " " + objSurname;
             return fullName;
         } else if (objMiddleName == null) {
@@ -86,17 +79,8 @@ public class Person {
             String fullName = objName + " " + objMiddleName + " " + objPatronymic + " " + objSurname;
             return fullName;
         }
-
     }
 
-    /**
-     * Возвращает адрес, по которому проживает человек.
-     * <p>
-     * Возвращаемый адрес соответствует месту постоянной регистрации человека,
-     * согласно паспортным данным.
-     *
-     * @return адрес регистрации в виде строки.
-     */
     public String getFullAddress() {
 
         String objCountry = objAddress.getCountry();
