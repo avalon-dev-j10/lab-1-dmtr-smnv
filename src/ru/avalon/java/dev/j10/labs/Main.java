@@ -17,9 +17,9 @@ public class Main {
         System.out.println(smithName2);
         System.out.println(smithAddress2);
 
-        Person ivanovName = new Person("Иван", "", "Иванович", "Иванов");
+        Person ivanovName = new Person("Иван", null, "Иванович", "Иванов");
         Person ivanovAddress = new Person("РФ", "Москва", "Красная площадь", 1);
-        Person smithName = new Person("John", "Edward", "", "Smith");
+        Person smithName = new Person("John", "Edward", null, "Smith");
         Person smithAddress = new Person("USA", "Washington", "NW Pennsylvania Ave", 1600);
 
         System.out.println(ivanovName.getFullName());

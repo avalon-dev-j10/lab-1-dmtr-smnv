@@ -67,12 +67,6 @@ public class Passport {
     }
 
     public String getMiddleName() {
-
-//      char initial = middleName.charAt(0);
-//      String temp = Character.toString(initial) + ".";
-//      this.middleName = String temp;
-//      String temp = middleName.substring(0,1) + ".";
-//      this.middleName = temp;
         return middleName;
     }
 

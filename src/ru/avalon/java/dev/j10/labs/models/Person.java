@@ -12,6 +12,13 @@ import ru.avalon.java.dev.j10.labs.commons.Address;
  * <li>пропиской по месту жительства.
  * </ol>
  */
+/**
+ * Класс Person имеет два перегружаемых конструктора: 1) при вводе имени объекта
+ * подставляется конструктор, инициализирующий объект класса Passport; 2) при
+ * вводе адреса — объект класса Address. Выбор конструктора осуществляется по
+ * составу параметров: 4 стринга = объект класса Passport, 3 стринга + инт =
+ * объект класса Address.
+ */
 public class Person {
 
     Passport objPassport;
@@ -48,6 +55,11 @@ public class Person {
      *
      * @return имя человека в виде строки.
      */
+    /**
+     * Метод getFullName использует оператор if для выбора вариантов выдачи
+     * полного имени; при наличии middle name у объекта, метод обрезает middle
+     * name до первой буквы с точкой с помощью метода charAt(0).
+     */
     public String getFullName() {
 
         String objName = objPassport.getName();
@@ -55,32 +67,26 @@ public class Person {
         String objPatronymic = objPassport.getPatronymic();
         String objSurname = objPassport.getSurname();
 
-//      char initial = objMiddleName.charAt(0);
-//      String temp = Character.toString(initial) + ".";
-//      this.objMiddleName = String temp;
-//      String temp = objMiddleName.substring(0,1) + ".";
-//      this.middleName = temp;
         if (objMiddleName == null && objPatronymic == null) {
             String fullName = objName + " " + objSurname;
             return fullName;
         } else if (objPatronymic == null) {
 
-//          char initial = objMiddleName.charAt(0);
-//          String temp = Character.toString(initial) + ".";
-//          this.objMiddleName = String temp;
-//          String temp = obj.MiddleName.substring(0,1) + ".";
-//          this.objMiddleName = temp;
-            String fullName = objName + " " + objMiddleName + " " + objSurname;
+            String fullName = objName + " " + objMiddleName.charAt(0) + "." + " " + objSurname;
             return fullName;
         } else if (objMiddleName == null) {
             String fullName = objName + " " + objPatronymic + " " + objSurname;
             return fullName;
         } else {
-            String fullName = objName + " " + objMiddleName + " " + objPatronymic + " " + objSurname;
+            String fullName = objName + " " + objMiddleName.charAt(0) + "." + " " + objPatronymic + " " + objSurname;
             return fullName;
         }
     }
 
+    /**
+     * Метод getFullAddress выдает полный адрес объекта, конвертируя инт номера
+     * дома в строку с помощью метода toString.
+     */
     public String getFullAddress() {
 
         String objCountry = objAddress.getCountry();
