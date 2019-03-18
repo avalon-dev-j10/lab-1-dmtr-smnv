@@ -49,5 +49,4 @@ public class Address {
     public int getBuilding() {
         return building;
     }
-
 }
